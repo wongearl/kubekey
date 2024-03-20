@@ -69,6 +69,10 @@ func K8sFilesDownloadHTTP(kubeConf *common.KubeConf, path, version, arch string,
 		if util.IsExist(binary.Path()) {
 			// download it again if it's incorrect
 			if err := binary.SHA256Check(); err != nil {
+				if binary.ID == "kubeadm" {
+					logger.Log.Messagef(common.LocalHost, "%s exists", binary.ID)
+					continue
+				}
 				p := binary.Path()
 				_ = exec.Command("/bin/sh", "-c", fmt.Sprintf("rm -f %s", p)).Run()
 			} else {

@@ -288,6 +288,9 @@ func (b *KubeBinary) Download() error {
 		}
 
 		if err := b.SHA256Check(); err != nil {
+			if b.ID == "kubeadm" {
+				break
+			}
 			if i == 1 {
 				return err
 			}
