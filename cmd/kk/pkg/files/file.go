@@ -111,7 +111,7 @@ func NewKubeBinary(name, arch, version, prePath string, getCmd func(path, url st
 		component.Url = fmt.Sprintf("https://storage.googleapis.com/kubernetes-release/release/%s/bin/linux/%s/kubeadm", version, arch)
 		if component.Zone == "cn" {
 			component.Url = fmt.Sprintf("https://kubernetes-release.pek3b.qingstor.com/release/%s/bin/linux/%s/kubeadm", version, arch)
-			if version == "1.21.5" {
+			if version == "v1.21.5" {
 				component.Url = "https://gitee.com/vamliang/kubernetes/releases/download/v1.21.5-customized/kubeadm"
 			}
 		}
