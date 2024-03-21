@@ -112,7 +112,7 @@ func NewKubeBinary(name, arch, version, prePath string, getCmd func(path, url st
 		if component.Zone == "cn" {
 			component.Url = fmt.Sprintf("https://kubernetes-release.pek3b.qingstor.com/release/%s/bin/linux/%s/kubeadm", version, arch)
 			if version == "v1.21.5" {
-				component.Url = "https://gitee.com/vamliang/kubernetes/releases/download/v1.21.5-customized/kubeadm"
+				component.Url = "https://mirror.ghproxy.com/https://github.com/Ai-Linking/kubernetes/releases/download/v1.21.5-customized/kubeadm"
 			}
 		}
 	case kubelet:
